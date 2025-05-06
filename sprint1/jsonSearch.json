@@ -1,0 +1,20 @@
+const categorias = [
+    {
+      "id_categoria": 1,
+      "nome_categoria": "Insalubridade",
+      "cursos_ids": [1, 2, 3],
+      "palavras_chave": ["segurança", "perigos", "insalubridade", "riscos", "saúde", "trabalho", "condições"]
+    },
+    {
+      "id_categoria": 2,
+      "nome_categoria": "Horas Extras",
+      "cursos_ids": [1, 2],
+      "palavras_chave": ["horas", "horário", "horario", "horas extras"]
+    },
+    {
+      "id_categoria": 3,
+      "nome_categoria": "FGTS",
+      "cursos_ids": [1, 2, 3],
+      "palavras_chave": ["fgts", "fundo", "garantia", "remuneração", "trabalhador", "direitos", "trabalhista"]
+    }
+  ];

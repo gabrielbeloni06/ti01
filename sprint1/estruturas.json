@@ -1,0 +1,69 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nome": "Ana Souza",
+        "email": "ana.souza@email.com",
+      },
+      {
+        "id": 2,
+        "nome": "Carlos Silva",
+        "email": "carlos.silva@email.com",
+      }
+    ],
+    "categorias": [
+      {
+        "id": 1,
+        "nome": "FGTS"
+      },
+      {
+        "id": 2,
+        "nome": "Férias"
+      },
+      {
+        "id": 3,
+        "nome": "13º Salário"
+      }
+    ],
+    "direitos": [
+      {
+        "id": 1,
+        "nome": "Férias Remuneradas",
+        "descricao": "Todo trabalhador com carteira assinada tem direito a 30 dias de férias após 12 meses de trabalho."
+      },
+      {
+        "id": 2,
+        "nome": "FGTS",
+        "descricao": "O empregador deve depositar mensalmente 8% do salário do trabalhador em uma conta do FGTS."
+      }
+    ],
+    "artigos": [
+    {
+      "id": 1,
+      "titulo": "O que são férias na CLT e como funcionam?",
+      "resumo": "Saiba tudo sobre as férias na CLT e como você pode usufruir deste direito.",
+      "imagem": "img.jpg",
+      "conteudo": "As férias são um direito garantido pela CLT... Aqui você pode colocar o texto completo do artigo, com vários parágrafos, links e outros elementos.//// Artigos armazenados no banco de dados /////",
+      "data": "21-04-2025",
+      "autor": "Gabriel",
+      "categoria": "Férias",
+      "tags": ["CLT", "direitos trabalhistas", "férias"]
+    }
+    ],
+    "videos": [
+      {
+        "id": 1,
+        "titulo": "Entenda seu 13º salário",
+        "url": "https://youtube.com/video1",
+        "descricao": "Vídeo explicativo sobre como é calculado o décimo terceiro salário.",
+        "categoriaId": 3
+      },
+      {
+        "id": 2,
+        "titulo": "Seus direitos no trabalho",
+        "url": "https://youtube.com/video2",
+        "descricao": "Resumo geral dos principais direitos trabalhistas.",
+        "categoriaId": 1
+      }
+    ]
+  }

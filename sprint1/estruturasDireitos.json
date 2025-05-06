@@ -1,0 +1,235 @@
+//Json para favoritar artigos e curtir
+{
+    "usuario_id": 101,
+    "artigos_favoritos": [
+    {
+    "artigo_id": 1,
+    "titulo": "Direitos estabelecidos pela CLT ",
+    "artigo": "/artigos ",
+    "curtido": true
+    },
+    {
+    "artigo_id": 3,
+    "titulo": "Direitos de insalubridade",
+    "artigo": "/artigos ",
+    "curtido": false
+    }
+    ]
+    }
+
+//Json para pesquisa por palavras-chave e tags
+{
+    "search_query": "Direitos Trabalhistas",
+    "resultados": [
+    {
+    "id": 1,
+    "titulo": "Direitos Trabalhistas",
+    "local": "/artigos/direitos",
+    "keywords": ["direitos", "trabalhistas", "CLT"],
+    "tags": ["direitos", "trabalhador", "Riscos"],
+    "area": "Insalubridade"
+    }
+    ]
+}
+
+
+//Json de modulos
+cursos = [
+    {
+      "id": 1,
+      "nome": "Curso 1",
+      "modulos": [
+        { "id": 1, "nome": "Módulo 1: Definir", "concluido": false },
+        { "id": 2, "nome": "Módulo 2: Definir", "concluido": false },
+        { "id": 3, "nome": "Módulo 3: Definir", "concluido": false}
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Curso 2",
+      "modulos": [
+        { "id": 1, "nome": "Módulo 1: Definir", "concluido": false },
+        { "id": 2, "nome": "Módulo 2: Definir", "concluido": false},
+        { "id": 3, "nome": "Módulo 3: Definir", "concluido": false }
+      ]
+    },
+];
+
+//Json de progresso
+{
+  "sistema_de_progresso_da_trilha_academica": {
+    "progresso": [
+      {
+        "id": 1,
+        "profissao": "segurança",
+        "duracao": "8",
+        "atingido": "52%",
+        "restante": "48%"
+      },
+      {
+        "id": 2,
+        "profissao": "eletricista",
+        "duracao": "8",
+        "atingido": "52%",
+        "restante": "48%"
+      }
+    ]
+  }
+}
+
+//Json de pontuação
+{ 
+  "alunos": [ 
+    { 
+
+      "id": 1, 
+
+      "nome": "Clemencia Santos", 
+
+      "curso": "Direitos trabalhista", 
+
+      "concluido": true, 
+
+      "pontuacao": 100, 
+    }, 
+  ] 
+}
+
+//Json de artigos
+[
+    {
+      "id": 1,
+      "titulo": "Férias Remuneradas: Entenda seus Direitos",
+      "texto": "Todo trabalhador com carteira assinada tem direito a 30 dias de férias remuneradas após 12 meses de trabalho. Durante as férias, o empregado deve receber um adicional de 1/3 sobre o salário normal.",
+      "img": {
+        "src": "imagens/ferias.jpg",
+        "alt": "Pessoa relaxando na praia durante as férias"
+      }
+    }
+  ]
+
+  //Json de exercícios
+  {
+    "id": 1,
+    "titulo": "Exercícios sobre Direitos Trabalhistas",
+    "questoes": [
+      {
+        "idQuestao": 1,
+        "texto": "Qual é o tempo mínimo de trabalho necessário para que um trabalhador tenha direito às férias remuneradas?",
+        "img": {
+          "src": "imagens/questao-ferias.jpg",
+          "alt": "Calendário com marcações de férias"
+        }
+      }
+
+
+//Json para feedbacks e avaliações
+{
+  "usuario_id": 101,
+  "curso_id": 202,
+  "avaliacao": {
+    "nota": 4.5,
+    "comentario": "O curso é muito bom, mas poderia ter mais exemplos práticos.",
+    "data": "2025-04-25"
+  },
+{
+    "feedbacks": [
+      {
+        "id": 1,
+        "nome": "Ana Souza",
+        "avaliacao": 5,
+        "comentario": "O curso é excelente! Muito didático e organizado. Recomendo a todos.",
+        "data": "2025-04-24"
+      },
+      {
+        "id": 2,
+        "nome": "Carlos Mendes",
+        "avaliacao": 4,
+        "comentario": "Gostei bastante do conteúdo, mas poderia ter mais exemplos práticos.",
+        "data": "2025-04-23"
+      },
+      {
+        "id": 3,
+        "nome": "Juliana Ribeiro",
+        "avaliacao": 5,
+        "comentario": "Material de ótima qualidade e fácil de entender. Parabéns à equipe!",
+        "data": "2025-04-22"
+      },
+      {
+        "id": 4,
+        "nome": "Fernando Lima",
+        "avaliacao": 3,
+        "comentario": "Achei o conteúdo bom, mas alguns vídeos ficaram com áudio baixo.",
+        "data": "2025-04-21"
+      }
+    ]
+  }
+
+  {
+    "funcionalidades": {
+      "carrossel": {
+        "banners": [
+          {
+            "id": 1,
+            "imagem": "banner1.jpg",
+            "titulo": "Conheça seus Direitos",
+            "descricao": "Aprenda sobre direitos fundamentais no trabalho."
+          },
+          {
+            "id": 2,
+            "imagem": "banner2.jpg",
+            "titulo": "Férias e 13º",
+            "descricao": "Tudo sobre descanso e benefícios."
+          },
+          {
+            "id": 3,
+            "imagem": "banner3.jpg",
+            "titulo": "Saúde e Segurança",
+            "descricao": "Garantias legais no ambiente de trabalho."
+          }
+        ]
+      },
+      "cards_direitos": [
+        {
+          "id": 1,
+          "titulo": "Férias Remuneradas",
+          "descricao": "Após 12 meses de trabalho, você tem direito a 30 dias de férias com salário acrescido de 1/3."
+        },
+        {
+          "id": 2,
+          "titulo": "13º Salário",
+          "descricao": "Recebimento anual proporcional ao tempo de serviço prestado durante o ano."
+        },
+        {
+          "id": 3,
+          "titulo": "Jornada de Trabalho",
+          "descricao": "Carga horária máxima de 44 horas semanais e direito a horas extras."
+        },
+        {
+          "id": 4,
+          "titulo": "Licença Maternidade",
+          "descricao": "Direito a 120 dias de afastamento remunerado para mães."
+        }
+      ],
+      "video_aulas": [
+        {
+          "id": 1,
+          "titulo": "Introdução aos Direitos Trabalhistas",
+          "video_url": "https://linkvideo.com/aula1"
+        },
+        {
+          "id": 2,
+          "titulo": "CLT na prática",
+          "video_url": "https://linkvideo.com/aula2"
+        }
+      ],
+      "etapas_curso": [
+        "Etapa 1: Introdução aos Direitos",
+        "Etapa 2: CLT e Deveres",
+        "Etapa 3: Direitos Específicos",
+        "Etapa 4: Encerramento e Certificação"
+      ]
+    }
+  }
+
+

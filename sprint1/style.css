@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #4a90e2;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+#searchInput:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+#sugestoes {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#sugestoes li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+#sugestoes li:hover {
+  background-color: #eee;
+}
+
+/* Aqui: seletor mais específico para as sugestões de artigos */
+#sugestoes li.sugestao-artigo {
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+#sugestoes li.sugestao-artigo:hover {
+  background-color: #ffb84d;
+}
