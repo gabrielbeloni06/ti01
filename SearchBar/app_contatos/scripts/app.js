@@ -1,8 +1,7 @@
-// armazena os dados carregados
 let db = [];
 
-// busca o JSON e popula a variável db
-fetch('./scripts/dados.json')
+// Faz a requisição para o servidor Node.js e carrega os dados
+fetch('/api/contatos')
   .then(res => {
     if (!res.ok) throw new Error('Falha ao carregar JSON');
     return res.json();
@@ -45,7 +44,7 @@ function renderLista() {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${c.id}</td>
-      <td>${c.nome}</td>
+      <td>${c.dados}</td>
       <td>${c.telefone}</td>
       <td>${c.email}</td>
       <td>${c.direito}</td>
