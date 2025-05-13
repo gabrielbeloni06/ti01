@@ -1,78 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desenvolvimento de Interfaces Web | Pesquisa de Contatos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        body { font-family: 'Roboto', sans-serif; background-color: black; color: #fff; }
-        h1 { text-align: center; margin: 30px 0; color: #f7f7f7; }
-        .container { background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); padding: 30px; margin-top: 30px; color: #000; }
-        .form-control { border-radius: 8px; padding: 10px; }
-        .filtro-direito { background-color: white; border: 1px solid #ddd; }
-        .filtro-direito option:not(:first-child) { background-color: #D3D3D3; color: black; }
-        .filtro-cursos { background-color: purple; color: white; }
-        .filtro-cursos:hover { background-color: white; color: purple; }
-        .filtro-artigos { background-color: orange; color: white; }
-        .filtro-artigos:hover { background-color: white; color: orange; }
-        table { margin-top: 30px; width: 100%; border-collapse: collapse; }
-        table th, table td { padding: 12px; text-align: left; }
-        table th { background-color: #444; border-bottom: 2px solid #ddd; }
-        table tr:nth-child(even) { background-color: #555; }
-        table tr:hover { background-color: #666; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">    
 </head>
+<style>
+    /*CSS da página*/
+    body { font-family: 'Roboto', sans-serif; background-color: black; color: #fff; }
+    h1 { text-align: center; margin: 30px 0; color: #f7f7f7; }
+    .container { background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); padding: 30px; margin-top: 30px; color: #000; }
+    .form-control { border-radius: 8px; padding: 10px; }
+
+    /*CSS dos filtros*/
+    #filtro_direito { background-color: white; border: 1px solid #ddd; }
+    #filtro_direito option:not(:first-child) { background-color: #D3D3D3; color: black; }
+    #filtro_tipo { background-color: purple; color: white; }
+
+    table { margin-top: 30px; width: 100%; border-collapse: collapse; }
+    table th, table td { padding: 12px; text-align: left; }
+    table th { background-color: #444; border-bottom: 2px solid #ddd; }
+    table tr:nth-child(even) { background-color: #555; }
+    table tr:hover { background-color: #666; }
+</style>
 
 <body>
-    <h1>Listagem de Contatos</h1>
+    <h1>Pesquisa Direitos Trabalhistas TI</h1>
 
     <div class="container">
-        <div id="msg" class="row mb-3"></div>
-
-        <form id="form-contato">
-            <div class="form-group row">
-                <div class="col-sm-4">
-                    <select id="filtro_direito" class="form-control filtro-direito" onchange="renderLista()">
-                        <option value="">Todos os direitos</option>
-                        <option value="Horas-Extras">Horas-Extras</option>
-                        <option value="Insalubridade">Insalubridade</option>
-                        <option value="FGTS">FGTS</option>
-                        <option value="Licença Maternidade">Licença Maternidade</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
-                <div class="col-sm-8">
-                    <select id="filtro_categoria" class="form-control" onchange="renderLista()">
-                        <option value="">Todas as categorias</option>
-                        <option value="cursos" class="filtro-cursos">Cursos</option>
-                        <option value="artigos" class="filtro-artigos">Artigos</option>
-                    </select>
-                </div>
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
             </div>
-        </form>
+        </div>
+                <form id="form-contato">            
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <select name="filtro_direito" id="filtro_direito" onchange="ListaContatos()" class="form-control">
+                                <option value="">Todos os direitos</option>
+                                <option value="Horas-Extras">Horas Extras</option>
+                                <option value="Insalubridade">Insalubridade</option>
+                                <option value="FGTS">FGTS</option>
+                                <option value="Licença-Maternidade">Licença Maternidade</option>
+                                <option value="Salário">Salário Mínimo</option>
+                            </select>                    
+                        </div>
+                        <div class="col-sm-8">
+                            <select name="filtro_tipo" id="filtro_tipo" onchange="ListaContatos()"  class="form-control">
+                                <option value="">Selecione o Tipo</option>
+                                <option value="Artigo">Artigo</option>
+                                <option value="Curso">Cursos</option>
+                                <option value="Exercicio">Exercícios</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-sm-12">
 
         <div class="row">
             <div class="col-sm-12">
-                <table class="table table-striped" id="grid-contatos">
+                <table id="grid-contatos" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nome</th>
-                            <th>Telefone</th>
-                            <th>E-mail</th>
-                            <th>Direito</th>
-                            <th>Categoria</th>
-                            <th>Site</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Duração</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Acessar</th>
                         </tr>
                     </thead>
                     <tbody id="table-contatos">
-                        <!-- Preenchido pelo app.js -->
                     </tbody>
                 </table>
             </div>
@@ -80,6 +84,40 @@
     </div>
 
     <script src="./scripts/app.js"></script>
-</body>
+    <script>
+        var db = []
+        readContato(dados => {
+            db = dados;
+            ListaContatos()
+        });
+        /*Lista*/
+        function ListaContatos() {
+            /*Filtros*/
+            let direito = document.getElementById('filtro_direito').value;
+            let tipo = document.getElementById('filtro_tipo').value;
+            tableContatos = document.getElementById("table-contatos");
+            tableContatos.innerHTML = "";
 
+            /*Preenche a tabela*/
+            for (let index = 0; index < db.length; index++) {
+                const contato = db[index];
+                /*Verifica se o dado faz parte de algum filtro*/
+                if (((contato.tema == direito) || (direito == '')) &&
+                    ((contato.tipo == tipo) || (tipo == ''))) {
+
+                    /*Apresenta o dado na tabela*/
+                    tableContatos.innerHTML += `<tr>
+                        <td scope="row">${contato.id}</td>
+                        <td>${contato.titulo}</td>
+                        <td>${contato.tema}</td>
+                        <td>${contato.tipo}</td>
+                        <td>${contato.duracao}</td>
+                        <td>${contato.data}</td>
+                        <td><a href="${contato.site}" target="_blank">Clique aqui</a></td>
+                    </tr>`;
+                }
+            }
+        }
+    </script>
+</body>
 </html>
