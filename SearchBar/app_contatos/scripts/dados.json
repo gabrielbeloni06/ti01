@@ -1,38 +1,257 @@
-[
+{
+    "pesquisa": [
     {
       "id": 1,
-      "dados": "João Silva",
-      "telefone": "31 99999-0001",
-      "email": "joao@example.com",
-      "direito": "Horas-Extras",
-      "categoria": "amigos",
-      "website": "https://joaosilva.com"
+      "titulo": "Entenda o FGTS para Estagiários",
+      "tema": "FGTS",
+      "tipo": "Artigo",
+      "duracao": "10 minutos",
+      "data": "10/05/2025",
+      "site": "https://www.exemplo.com"
     },
     {
       "id": 2,
-      "nome": "Maria Oliveira",
-      "telefone": "11 98888-0002",
-      "email": "maria@example.com",
-      "direito": "Licença Maternidade",
-      "categoria": "familia",
-      "website": "https://mariaoliveira.com"
+      "titulo": "Horas Extras: O Que Você Precisa Saber",
+      "tema": "Horas-Extras",
+      "tipo": "Artigo",
+      "duracao": "3 meses",
+      "data": "01/03/2025",
+      "site": "https://www.maternidade.com"
     },
     {
       "id": 3,
-      "nome": "Carlos Souza",
-      "telefone": "31 97777-0003",
-      "email": "carlos@example.com",
-      "direito": "Insalubridade",
-      "categoria": "cursos",
-      "website": "https://carlossouza.com"
+      "titulo": "Licença Maternidade: Guia Completo",
+      "tema": "Licença-Maternidade",
+      "tipo": "Curso",
+      "duracao": "60 min",
+      "data": "15/05/2025",
+      "site": "https://www.familia.com"
     },
     {
       "id": 4,
-      "nome": "Ana Pereira",
-      "telefone": "21 96666-0004",
-      "email": "ana@example.com",
-      "direito": "FGTS",
-      "categoria": "artigos",
-      "website": "https://anapereira.com"
+      "titulo": "Insalubridade no Trabalho: Exercícios Práticos",
+      "tema": "Insalubridade",
+      "tipo": "Exercicio",
+      "duracao": "45 min",
+      "data": "20/05/2020",
+      "site": "https://www.reformatrabalhista.com"
+    },
+    {
+      "id": 5,
+      "titulo": "Planejamento com Horas Extras para Aposentadoria",
+      "tema": "Horas-Extras",
+      "tipo": "Artigo",
+      "duracao": "15 min",
+      "data": "30/03/2022",
+      "site": "https://www.aposentadoria.com"
+    },
+    {
+      "id": 6,
+      "titulo": "Curso sobre Insalubridade: Conheça Seus Direitos",
+      "tema": "Insalubridade",
+      "tipo": "Curso",
+      "duracao": "30 min",
+      "data": "19/02/2023",
+      "site": "https://www.estagiario.com"
+    },
+    {
+      "id": 7,
+      "titulo": "Salário e Rescisão: Cuidados na Demissão",
+      "tema": "Salário",
+      "tipo": "Artigo",
+      "duracao": "20 min",
+      "data": "25/12/2024",
+      "site": "https://www.demissao.com"
+    },
+    {
+      "id": 8,
+      "titulo": "Exercícios sobre Insalubridade e Falência da Empresa",
+      "tema": "Insalubridade",
+      "tipo": "Exercicio",
+      "duracao": "40 min",
+      "data": "20/10/2019",
+      "site": "https://www.falencia.com"
+    },
+    {
+      "id": 9,
+      "titulo": "Exercícios sobre Licença Maternidade e Aposentadoria",
+      "tema": "Licença-Maternidade",
+      "tipo": "Exercicio",
+      "duracao": "25 min",
+      "data": "25/01/2025",
+      "site": "https://www.direitosaposentadoria.com"
+    },
+    {
+      "id": 10,
+      "titulo": "Salário, FGTS e INSS: Entenda as Diferenças",
+      "tema": "Salário",
+      "tipo": "Exercicio",
+      "duracao": "12 min",
+      "data": "28/03/2022",
+      "site": "https://www.fgtsinss.com"
     }
-  ]
+  ],
+    "usuarios": [
+        {
+          "id": 1,
+          "login": "admin",
+          "senha": "123",
+          "nome": "Administrador do Sistema",
+          "email": "admin@abc.com"
+        },
+        {
+          "id": 2,
+          "login": "user",
+          "senha": "123",
+          "nome": "Usuario Comum",
+          "email": "user@abc.com"
+        }
+    ],
+    "locais": [
+        {
+          "id": 1,
+          "descricao": "PUC Minas - Coração Eucarístico",
+          "endereco": "Rua Dom José Gaspar, 500",
+          "favorito": true,
+          "cidade": "Belo Horizonte",
+          "latlong": [
+            -43.992911,
+            -19.923564
+          ],
+          "url": "https://www.pucminas.br",
+          "cor": "red"
+        },
+        {
+          "id": 2,
+          "descricao": "PUC Minas - Praça da Liberdade",
+          "endereco": "Av. Brasil, 2023 - Funcionários",
+          "favorito": false,
+          "cidade": "Belo Horizonte",
+          "latlong": [
+            -43.9397233,
+            -19.9332786
+          ],
+          "url": "https://www.pucminas.br/unidade/praca-da-liberdade/Paginas/default.aspx",
+          "cor": "red"
+        },
+        {
+          "id": 3,
+          "descricao": "PUC Minas - Barreiro",
+          "endereco": "Avenida Afonso Vaz de Melo, 1.200 - Barreiro",
+          "favorito": true,
+          "cidade": "Belo Horizonte",
+          "latlong": [
+            -44.025818,
+            -19.976609
+          ],
+          "url": "https://www.pucminas.br/unidade/barreiro/Paginas/default.aspx",
+          "cor": "red"
+        },
+        {
+          "id": 4,
+          "descricao": "PUC Minas - São Gabriel",
+          "endereco": "Rua Walter Ianni, 255 - São Gabriel",
+          "favorito": true,
+          "cidade": "Belo Horizonte",
+          "latlong": [
+            -43.917967,
+            -19.859226
+          ],
+          "url": "https://www.pucminas.br/unidade/sao-gabriel/Paginas/default.aspx",
+          "cor": "red"
+        },
+        {
+          "id": 5,
+          "descricao": "PUC Minas - Contagem",
+          "endereco": "R. Rio Comprido, 4.580",
+          "favorito": false,
+          "cidade": "Contagem",
+          "latlong": [
+            -44.076069,
+            -19.939135
+          ],
+          "url": "https://www.pucminas.br/unidade/contagem/Paginas/default.aspx",
+          "cor": "blue"
+        },
+        {
+          "id": 6,
+          "descricao": "PUC Minas - Betim",
+          "endereco": "R. do Rosário, 1.081 Bairro Angola",
+          "favorito": true,
+          "cidade": "Betim",
+          "latlong": [
+            -44.1984331,
+            -19.9550716
+          ],
+          "url": "https://www.pucminas.br/unidade/betim/Paginas/default.aspx",
+          "cor": "blue"
+        },
+        {
+          "id": 7,
+          "descricao": "PUC Minas - Poços de Caldas",
+          "endereco": "Av. Pe. Cletus Francis Cox, 1.661",
+          "favorito": true,
+          "cidade": "Poços de Caldas",
+          "latlong": [
+            -46.5944649,
+            -21.78904
+          ],
+          "url": "https://www.pucpcaldas.br/",
+          "cor": "green"
+        }
+      ],
+    "lancamentos": [
+        {
+          "mes": "jan-24",
+          "categoria": "Alimentação",
+          "valor": 500
+        },
+        {
+          "mes": "jan-24",
+          "categoria": "Transporte",
+          "valor": 200
+        },
+        {
+          "mes": "jan-24",
+          "categoria": "Lazer",
+          "valor": 300
+        },
+        {
+          "mes": "fev-24",
+          "categoria": "Alimentação",
+          "valor": 450
+        },
+        {
+          "mes": "fev-24",
+          "categoria": "Transporte",
+          "valor": 180
+        },
+        {
+          "mes": "fev-24",
+          "categoria": "Lazer",
+          "valor": 350
+        },
+        {
+          "mes": "mar-24",
+          "categoria": "Alimentação",
+          "valor": 600
+        },
+        {
+          "mes": "mar-24",
+          "categoria": "Transporte",
+          "valor": 250
+        },
+        {
+          "mes": "mar-24",
+          "categoria": "Lazer",
+          "valor": 400
+        }
+      ],
+    "cidades": [
+         { "id": 1, "cidade": "Belo Horizonte", "estado": "MG", "populacao": 3800000 },
+         { "id": 2, "cidade": "São Paulo", "estado": "SP", "populacao": 11800000 },
+         { "id": 3, "cidade": "Rio de Janeiro", "estado": "RJ", "populacao": 5300000 },
+         { "id": 4, "cidade": "Curitiba", "estado": "PR", "populacao": 1200000 },
+         { "id": 5, "cidade": "Fortaleza", "estado": "CE", "populacao": 2100000 }
+     ]
+}
