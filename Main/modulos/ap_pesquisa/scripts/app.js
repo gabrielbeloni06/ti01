@@ -1,67 +1,120 @@
-let db = [];
+const apiUrl = '/pesquisa'; // URL do JSON Server
 
-// Faz a requisição para o servidor Node.js e carrega os dados
-fetch('/api/contatos')
-  .then(res => {
-    if (!res.ok) throw new Error('Falha ao carregar JSON');
-    return res.json();
-  })
-  .then(data => {
-    db = data;
-    renderLista();  // exibe tudo na tela
-  })
-  .catch(err => {
-    console.error(err);
-    document.getElementById('msg').innerHTML = 
-      `<div class="alert alert-danger">Erro ao carregar contatos.</div>`;
-  });
-
-// função que lê os filtros e renderiza a tabela
-function renderLista() {
-  const filtroDireito = document.getElementById('filtro_direito').value;
-  const filtroCategoria = document.getElementById('filtro_categoria').value;
-  const tbody = document.getElementById('table-contatos');
-  tbody.innerHTML = '';
-
-  // filtra o array: se filtro em branco, mantém todos
-  const filtrados = db.filter(c => {
-    const matchDireito = filtroDireito === '' || c.direito === filtroDireito;
-    const matchCat = filtroCategoria === '' || c.categoria === filtroCategoria;
-    return matchDireito && matchCat;
-  });
-
-  // se não houve resultado
-  if (filtrados.length === 0) {
-    tbody.innerHTML = `
-      <tr>
-        <td colspan="7" class="text-center">Nenhum contato encontrado.</td>
-      </tr>`;
-    return;
-  }
-
-  // monta as linhas
-  filtrados.forEach(c => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${c.id}</td>
-      <td>${c.dados}</td>
-      <td>${c.telefone}</td>
-      <td>${c.email}</td>
-      <td>${c.direito}</td>
-      <td>${c.categoria}</td>
-      <td><a href="${c.website}" target="_blank">Visitar</a></td>
-    `;
-    tbody.appendChild(tr);
-  });
+function displayMessage(mensagem) {
+    const msg = document.getElementById('msg');
+    msg.innerHTML = '<div class="alert alert-warning">' + mensagem + '</div>';
 }
 
-// vincula renderLista ao onchange dos selects
-const selDireito = document.getElementById('filtro_direito');
-if (selDireito) selDireito.addEventListener('change', renderLista);
-document.getElementById('filtro_categoria')
-  .addEventListener('change', renderLista);
+function readContato(callback) {
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar dados: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => callback(data))
+        .catch(error => {
+            displayMessage('Erro ao carregar dados: ' + error.message);
+        });
+}
 
-// quando a página carrega, garante exibição
-window.addEventListener('DOMContentLoaded', () => {
-  renderLista();
+var db = [];
+readContato(dados => {
+    db = dados;
+    ListaContatos();
 });
+
+const searchInput = document.getElementById("searchInput");
+const sugestoes = document.getElementById("sugestoes");
+
+function ListaContatos() {
+    let direito = document.getElementById('filtro_direito').value.toLowerCase();
+    let tipo = document.getElementById('filtro_tipo').value.toLowerCase();
+    let termoBusca = searchInput.value.toLowerCase().trim();
+    let tableContatos = document.getElementById("table-contatos");
+    tableContatos.innerHTML = "";
+
+    let filtered = db.filter(contato => {
+        const titulo = contato.titulo.toLowerCase();
+        const tema = contato.tema.toLowerCase();
+        const tipoContato = contato.tipo.toLowerCase();
+        const duracao = contato.duracao.toLowerCase();
+        const data = contato.data.toLowerCase();
+
+        const correspondeFiltro = 
+            (tema === direito || direito === '') &&
+            (tipoContato === tipo || tipo === '');
+
+        const correspondeBusca =
+            termoBusca === '' || 
+            titulo.includes(termoBusca) ||
+            tema.includes(termoBusca) ||
+            tipoContato.includes(termoBusca) ||
+            duracao.includes(termoBusca) ||
+            data.includes(termoBusca);
+
+        return correspondeFiltro && correspondeBusca;
+    });
+
+  /*Atualiza as sugestões*/
+    sugestoes.innerHTML = "";
+
+    if (termoBusca.length > 0) {
+        const sugestoesSet = new Set();
+
+        filtered.forEach(contato => {
+            const campos = [contato.titulo, contato.tema, contato.tipo, contato.duracao, contato.data];
+            campos.forEach(campo => {
+                if (campo.toLowerCase().startsWith(termoBusca)) {
+                    sugestoesSet.add(campo);
+                }
+            });
+        });
+
+        if (sugestoesSet.size > 0) {
+            sugestoesSet.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                li.onclick = () => {
+                    searchInput.value = item;
+                    sugestoes.style.display = "none";
+                    ListaContatos(); // atualiza a tabela filtrada
+                };
+                sugestoes.appendChild(li);
+            });
+            sugestoes.style.display = "block";
+        } else {
+            sugestoes.style.display = "none";
+        }
+    } else {
+        sugestoes.style.display = "none";
+    }
+
+    if (filtered.length === 0) {
+        tableContatos.innerHTML = `<tr><td colspan="7" class="text-center">Nenhum contato encontrado.</td></tr>`;
+        return;
+    }
+
+    filtered.forEach(contato => {
+        tableContatos.innerHTML += `<tr>
+            <td scope="row">${contato.id}</td>
+            <td>${contato.titulo}</td>
+            <td>${contato.tema}</td>
+            <td>${contato.tipo}</td>
+            <td>${contato.duracao}</td>
+            <td>${contato.data}</td>
+            <td><a href="${contato.site}" target="_blank">Clique aqui</a></td>
+        </tr>`;
+    });
+}
+
+/*Some com as sugestões quando clicar fora*/
+document.addEventListener("click", (e) => {
+  if (!searchInput.contains(e.target) && !sugestoes.contains(e.target)) {
+    sugestoes.style.display = "none";
+  }
+});
+searchInput.addEventListener('input', ListaContatos);
+document.getElementById('filtro_direito').addEventListener('change', ListaContatos);
+document.getElementById('filtro_tipo').addEventListener('change', ListaContatos);
