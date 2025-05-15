@@ -22,7 +22,7 @@ h1 {
    cursor: pointer;
 }
 form {
-  background-color: orange;
+  background-color: darkblue;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -34,4 +34,3 @@ form {
   padding: 20px;
   border-radius: 10px;
 }
-
